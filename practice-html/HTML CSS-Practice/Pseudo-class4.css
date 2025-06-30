@@ -1,4 +1,7 @@
-=======================*/.valid-invalid-demo:valid{    order: px solid #2e7d32;    background: #e8f5e9;    color: *e7d32;
+/* =======================*/
+.valid-invalid-demo:valid{    
+    order: px solid #2e7d32;    
+    background: #e8f5e9;    color: #00bcd4;
 }
 .valid-invalid-pattern:valid{
     border: 2px solid #1565c0;
