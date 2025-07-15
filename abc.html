@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mastering GRANT & REVOKE in Oracle Database (DCL)</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff; color: #333; }
+    table { width: 100%; border-collapse: collapse; }
+    .header, .footer { background: #10192C; color: #fff; text-align: center; padding: 10px; }
+    .main { padding: 20px; }
+    .sidebar { background: #f5f5f5; padding: 20px; vertical-align: top; }
+    .section { margin-bottom: 30px; }
+    h1, h2 { color: #10192C; }
+    code { background: #eef; padding: 2px 4px; border-radius: 4px; }
+    pre { background: #eef; padding: 10px; overflow-x: auto; }
+    .list-inline { list-style-type: none; padding: 0; }
+    .list-inline li { display: inline-block; margin-right: 10px; }
+    .btn { background: #00BCD4; color: #fff; padding: 8px 12px; text-decoration: none; border-radius: 4px; }
+    /* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background-color: #10192C;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+.header h1 {
+  font-size: 24px;
+}
+.header p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.main {
+  padding: 30px;
+  width: 70%;
+}
+.sidebar {
+  width: 30%;
+  background-color: #f2f2f2;
+  padding: 30px;
+  vertical-align: top;
+}
+
+/* Section Titles */
+.section h2 {
+  color: #10192C;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.section {
+  margin-bottom: 30px;
+}
+
+/* Code & Pre Blocks */
+code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  font-family: monospace;
+  color: #c7254e;
+}
+pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  overflow-x: auto;
+  font-size: 15px;
+  border-left: 4px solid #00BCD4;
+}
+
+/* Buttons */
+.btn {
+  background-color: #00BCD4;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Lists */
+ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+ul li {
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+  background-color: #10192C;
+  color: #ccc;}
+
+  </style>
+</head>
+<body>
+
+<table>
+  <!-- Header -->
+  <tr><td colspan="2" class="header">
+    <h1>Mastering GRANT &amp; REVOKE in Oracle Database (DCL)</h1>
+    <p>by Sandhiya Priya • 6d ago • 369 views</p>
+  </td></tr>
+
+  <!-- Content Row -->
+  <tr>
+    <!-- Main Content -->
+    <td class="main">
+      <div class="section">
+        <h2>Introduction</h2>
+        <p>In Oracle Database, <strong>DCL (Data Control Language)</strong> commands are essential for managing user access and database security.</p>
+        <ul>
+          <li><strong>GRANT</strong> — To assign privileges to users or roles.</li>
+          <li><strong>REVOKE</strong> — To remove privileges from users or roles.</li>
+        </ul>
+        <p>These commands control access to tables, views, procedures, and other database objects.</p>
+      </div>
+
+      <div class="section">
+        <h2>1. What Is GRANT in Oracle?</h2>
+        <p>The GRANT command is used to give users or roles specific privileges on database objects. Common privileges include:</p>
+        <ul>
+          <li><code>SELECT</code> — Read data from tables</li>
+          <li><code>INSERT</code> — Add new records</li>
+          <li><code>UPDATE</code> — Modify existing records</li>
+          <li><code>DELETE</code> — Remove records</li>
+          <li><code>CONNECT</code>, <code>RESOURCE</code>, etc.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>2. What Is REVOKE in Oracle?</h2>
+        <p>The REVOKE command removes previously granted privileges from users or roles.</p>
+      </div>
+
+      <div class="section">
+        <h2>3. How to Create a User and Grant Privileges</h2>
+        <pre><code>CREATE USER c##SANDHIYA IDENTIFIED BY Admin;
+GRANT CONNECT, RESOURCE TO c##SANDHIYA;
+GRANT SELECT ON EMP_IND TO c##SANDHIYA;
+GRANT INSERT, UPDATE, DELETE ON EMP_IND TO c##SANDHIYA;</code></pre>
+        <p><em>Tip:</em> Always grant the least amount of privilege necessary.</p>
+      </div>
+
+      <div class="section">
+        <h2>4. REVOKE Privileges from a User</h2>
+        <pre><code>REVOKE SELECT ON EMP_IND FROM c##SANDHIYA;
+REVOKE ALL ON EMP_IND FROM c##SANDHIYA;</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>5. Granting Public Access</h2>
+        <pre><code>GRANT SELECT ON EMP_IND TO PUBLIC;
+REVOKE SELECT ON EMP_IND FROM PUBLIC;</code></pre>
+        <p><strong>Note:</strong> <code>PUBLIC</code> means every current and future database user.</p>
+      </div>
+
+      <div class="section">
+        <h2>6. Role-Based Access Control</h2>
+        <pre><code>CREATE ROLE company_reader;
+GRANT SELECT ON EMP_IND TO company_reader;
+GRANT company_reader TO c##SANDHIYA, c##ARUN, c##DIVYA;
+REVOKE company_reader FROM c##DIVYA;</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>Quick Reference — Privilege Keywords</h2>
+        <table border="1" cellpadding="5">
+          <tr><th>Keyword</th><th>Meaning</th></tr>
+          <tr><td>SELECT</td><td>Read/view data</td></tr>
+          <tr><td>INSERT</td><td>Add new rows</td></tr>
+          <tr><td>UPDATE</td><td>Modify existing records</td></tr>
+          <tr><td>DELETE</td><td>Remove records</td></tr>
+          <tr><td>REFERENCES</td><td>Define foreign keys</td></tr>
+          <tr><td>ALTER</td><td>Change table structure</td></tr>
+          <tr><td>INDEX</td><td>Create indexes</td></tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Conclusion</h2>
+        <p>By effectively using GRANT and REVOKE commands, you can:</p>
+        <ul>
+          <li>Control user access to database objects</li>
+          <li>Enhance security</li>
+          <li>Manage large teams easily through roles</li>
+        </ul>
+      </div>
+    </td>
+
+    <!-- Sidebar -->
+    <td class="sidebar">
+      <div class="section">
+        <a href="#" class="btn">Download eBook</a>
+      </div>
+
+      <div class="section">
+        <h3>Upcoming Events</h3>
+        <ul class="list-inline">
+          <li>JUL 12 - Github Copilot Bootcamp</li>
+          <li>JUL 12 - Live Discussion: Startups & AI</li>
+          <li>JUL 22 - Automate Email Sentiment Analysis</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- Footer -->
+  <tr><td colspan="2" class="footer">
+    <p>&copy; 2025 C# Corner | All Rights Reserved</p>
+  </td></tr>
+</table>
+</body>
+</html>
