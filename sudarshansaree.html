@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+            margin: 0;
+            padding: 0;
+            }
+            body{
+                background-color: #f5ebdc;
+                font-family:Arial, Helvetica, sans-serif ;
+            
+            }
+            .top{
+                 background-color:#7a0e22;
+                 height: 40px;
+            }
+            .para1{
+                color: white;
+                text-align: center;
+                padding-top: 10px;
+            }
+             .img1{
+                width: 30px;
+                position: relative;
+                top: 10px;
+                left: 300px;
+             }
+             .para2{
+                font-size: 30px;
+                position: absolute;
+                top: 50px;
+                right: 800px;
+                color: #4c1c1c;
+             }
+             .img2{
+                position: absolute;
+                top: 55px;
+                right: 500px;
+             }
+             .img3{
+                position: absolute;
+                top: 50px;
+                width: 40px;
+                right: 440px;
+             }
+             .navigation{
+                margin-top: 40px;
+                display: flex;
+                justify-content: space-evenly;
+             }
+             .navigation a{
+                text-decoration: none;
+                color:#4c1c1c;
+             }
+             .navigation a:hover{
+                text-decoration: underline;
+                text-decoration-color: #4c1c1c;
+             }
+             .navigation select{
+                border: none;
+                background-color: #f5ebdc;
+                color:#4c1c1c; ;
+             }
+             .navigation select:hover{
+                text-decoration: underline;
+                text-decoration-thickness: 5px;
+             }
+             .bg{
+                background-color: white;
+                width: 100%;
+                height: 700px;
+                margin-top: 30px;
+             }
+             .bg img{
+                width: 80%;
+                height: 700px;
+                position: relative;
+                left: 150px;
+             }
+             .DISCOUNT{
+                text-align: center;
+                margin-top: 70px;
+             }
+             .DISCOUNT p:first-of-type{
+                font-size: 40px;
+                color:#4c1c1c ;
+             }
+             .DISCOUNT p:last-child{
+                font-size: 35px;
+                color: #4c1c1c;
+                margin-top: 20px;
+             }
+             .shop-section img{
+                width: 300px;
+                height: 400px;
+                margin: 10px;
+             }
+             .shop-section{
+                margin:30px 0 0 150px;
+                width: 80%;
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+             }
+             .shop{
+                font-size: 40px;
+                color: #4c1c1c;
+                margin: 50px 0 0 90px;
+             }
+             .shop-section span:hover{
+                transform: translatey(-5px) scale(1.01);
+             }
+             .shop-section span p{
+               position: relative;
+               left: 30px;
+               color: #4c1c1c;
+             }
+             .categories p{
+                color: #4c1c1c;
+                font-size: 30px;
+                text-align: center;
+                padding-top: 40px;
+             }
+             .image-section{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+             }
+             .line-through{
+             text-decoration: line-through;
+             }
+             .image-section img{
+               width: 300px;
+               margin-top: 10px;
+             }
+             .image-section img:hover{
+               transform: translateY(-5px) scale(1.01);
+             }
+             .image-section p{
+               color: #4c1c1c;
+               margin-left: 20px;
+             }
+              button{
+              width: 100px;
+              height: 50px;
+              border-radius: 40%;
+              color: white;
+              background-color: #7a0e22;
+              margin-top: 20px;
+              position: relative;
+              left: 50%;
+             }
+             button:hover{
+               transform: translateY(-2px) scale(1.1);
+            }
+            .footer{
+                color: #4c1c1c;
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 50px;
+            }
+            .footer p:hover{
+                text-decoration: underline;
+                text-decoration-thickness: 3px;
+            }
+            .sec1{
+                width: 350px;
+            }
+            .sec1 p{
+                margin-top: 30px;
+            }
+            .sec2 p{
+                margin-top: 20px;
+            }
+            .sec3 p{
+                margin-top: 20px;
+            }
+            .sec3{
+                width: 300px;
+            }
+            .foot1 img{
+                width: 30px;
+                margin: 10px;
+            }
+            .div-image{
+                width: 250px;
+                margin-top: 100px;
+                margin-right: 500px;
+            }
+            .foot1{
+                display: flex;
+                justify-content: space-between;
+            }
+            .div-input{
+                margin: 70px 0 0 200px;
+            }
+            .div-input label{
+                font-size: 30px;
+                color: #4c1c1c;
+            }
+            .div-input input{
+                background-color: #f5ebdc;
+                width: 170px;
+                height: 30px;
+                border-radius: 10%;
+            }
+            .foot2{
+                display: flex;
+                justify-content: space-around;
+                flex-direction: row;
+            }
+            .foot{
+                width: 1000px;
+                margin: 50px 0 0 100px;
+            }
+        </style>
+        <title>SudardhanSaree.com</title>
+    </head>
+    <body>
+        <div>
+            <section>
+                <div class="top">
+                    <p class="para1">Call us  +91 82718 34727  Whatsapp : +91 82718 34727.    Email Us : aryanodjj@gmail.com</p>
+                </div>
+                <div>
+                    <img src="./download (15).png" alt="search-icon" class="img1">
+                    <p class="para2">SudarshanSarees</p>
+                    <img src="./user.png" alt="login-icon" width="40px" class="img2">
+                    <img src="./bag.png" alt="cart-icon" class="img3">
+                </div>
+                <div class="navigation">
+                    <a href="#">Home</a>
+                    <select name="nav" id="nav">
+                        <option value="women">Women</option>
+                        <option value="Kanchipuram Saree">Kanchipuram Saree</option>
+                        <option value="lehanga choli">Lehanga Choli</option>
+                        <option value="kanchi mix silk Saree">Kanchi Mix Silk Saree</option>
+                        <option value="kadialsilksaree">Kadial Silk Saree</option>
+                        <option value="softsilksaree">Soft Silk Saree</option>
+                        <option value="artsilksaree">Art silk Saree</option>
+                        <option value="cottensilksaree">Cotton Silk Saree</option>
+                        <option value="rewsilksaree">Raw Silk Saree</option>
+                        <option value="banarasisilksaree">Banarasi Silk Saree</option>
+                        <option value="syntheticsaree">Synthetic Saree</option>
+                        <option value="kurti">Kurti</option>
+                        <option value="t-shirt">T-Shirt</option>
+                    </select>
+                    <select name="nav" id="nav3">
+                        <option value="mens">Mens</option>
+                        <option value="indo-western">Indo Western</option>
+                        <option value="sherwani">Sherwani</option>
+                        <option value="modi-jacket">Modi Jackets</option>
+                        <option value="suits-and-blazzers">Suits and Blazzers</option>
+                        <option value="designer-shirt">Designer Shirts</option>
+                        <option value="kurta-pyjama">Kurta Pyjama</option>
+                        <option value="dhoti">Dhoti</option>
+                        <option value="mojari">Mojari</option>
+                        <option value="pagri">Pagri</option>
+                    </select>
+                    <select name="nav" id="nav2">
+                        <option value="kids">Kids</option>
+                        <option value="boy">Boy</option>
+                        <option value="girl">Girl</option>
+                    </select>
+                    <a href="#">Branded Collections</a>
+                    <a href="#">Ready To Ship</a>
+                    <a href="#">Festival Collection</a>
+                    <a href="#">New Arrivals</a><br>
+                    <a href="#">Wholesale/Exports</a>
+                    <a href="#">About Us</a>
+                    <a href="#">History</a>
+                    <a href="#">Blogs</a>
+                </div>
+            </section>
+            <section>
+                <div class="bg">
+                    <img src="./1000_F_533258844_moMmY2FoP1O0PwkK0mSMQmz18v8HadFP.jpg" alt="SudardhanSaree">
+                </div>
+            </section>
+            <section>
+                <div CLASS="DISCOUNT"><hr>
+                    <p>Share on Facebook & Instagram <br>& Use Code SAVE20 For 20% <br>Discount On Your Order !! Share <br>Screenshot To - 8271834727</p>
+                    <p>"WORLD WIDE SHIPPING" IN "WHOLESALE PRICES" </p>
+                </div>
+            </section><hr>
+            <section>
+                 <p class="shop">SHOP BY CATEGORY</p>
+                <div class="shop-section">
+                    <span><img src="./fest.webp" alt="saree-image">
+                     <p>Festival collection saree &rightarrow;</p></span>
+                     <span><img src="./SUDARSHAN-SILKS-17-02-21338306_9b53f575-84a9-4a28-a0ab-633964d936ed.webp" alt="saree-image">
+                     <p>Kanchipuram Saree &rightarrow;</p></span>
+                     <span><img src="MC15041404.jpg" alt="saree-image">
+                     <p>Pure Mysore Silk Saree &rightarrow;</p></span>
+                    <span> <img src="COTTON.webp" alt="saree-image">
+                     <p>Cotton Saree &rightarrow;</p></span>
+                   <span><img src="ART15052980.jpg" alt="saree-image">
+                    <p>Art Silk Saree &rightarrow;</p></span>
+                     <span><img src="TIS15052505.jpg" alt="saree-image">
+                     <p>Raw Silk Saree &rightarrow;</p></span>
+                     <span><img src="gerogette.webp" alt="saree-image">
+                     <p>Georgette Sarees &rightarrow;</p></span>
+                     <span><img src="ZIR20422-3.webp" alt="saree-image">
+                     <p>Lehanga Choli &rightarrow;</p></span>
+                     <span><img src="indowestren.webp" alt="saree-image">
+                     <p>INDO WESTERN &rightarrow;</p></span>
+                     <span><img src="ramraj.webp" alt="saree-image">
+                     <p>Designer Shirts &rightarrow;</p></span>
+                     <span><img src="IMG_20241116_124448.webp" alt="saree-image">
+                     <p>Dhoti &rightarrow;</p></span>
+                </div>
+            </section>
+            <section>
+              <div class="categories">
+              <p>Indian Clothes Online , Kanchipuram Silk , Mysore Silk , Sherwani , Men Suits , Silk <br>Shirts and Dhotis , Kids, Cotton Saree , BollyWood Sarees , Anarkali Suits ,    Sudarshan <br> Silk     Sudarshan Family Store</p>
+              </div>
+            </section>
+            <section>
+                <div class="image-section">
+                     <span>
+                      <img src="./K16712714A.avif" alt="saree-image">
+                      <p>Pure Kanchipuram Silk Saree</p>
+                      <p><span class="line-through">&#8377; 7100</span> &#8377; 5099</p>
+                     </span>
+                     <span>
+                       <img src="./K16712706A.avif" alt="saree-image">
+                       <p>Pure Kanchipuram Silk Saree</p>
+                       <p><span class="line-through" >&#8377; 5500</span> &#8377; 4500</p>
+                     </span>
+                     <span>
+                      <img src="./INS16717670A.avif" alt="saree-image">
+                      <p>Pure Kanchipuram Silk Saree</p>
+                      <p><span class="line-through" > &#8377; 11000</span> &#8377; 9000</p>
+                     </span>
+                    <span>
+                      <img src="./INS16717653A.avif" alt="saree-image">
+                      <p>Pure Kanchipuram Silk Saree</p>
+                      <p><span class="line-through">&#8377; 9999</span> &#8377; 6999</p>
+                    </span>
+                     <span>
+                         <img src="./INS16717664A.avif" alt="saree-image">
+                         <p>Pure Kanchipuram Silk Saree</p>
+                         <p><span class="line-through">&#8377; 5499</span> &#8377; 4999</p>
+                     </span>
+                     <span>
+                        <img src="./INS16717669A.avif" alt="saree-image">
+                        <p>Pure Kanchipuram Silk Saree</p>
+                        <p><span class="line-through">&#8377; 21099</span> &#8377; 19999</p>
+                     </span>
+                     <span>
+                        <img src="./INS16717538A.avif" alt="saree-image">
+                        <p>Pure Kanchipuram Silk Saree</p>
+                        <p><span class="line-through">&#8377; 4999</span> &#8377; 4499</p>
+                     </span>
+                     <span>
+                        <img src="./INS16717599A.avif" alt="saree-image">
+                        <p>Pure Kanchipuram Silk Saree</p>
+                        <p><span class="line-through">&#8377; 8677</span> &#8377; 8099</p>
+                     </span>
+                     <span>
+                       <img src="./INS16717623A.avif" alt="saree-image">
+                       <p>Pure Kanchipuram Silk Saree</p>
+                       <p><span>&#8377; 8499</span> &#8377; 7899</p>
+                     </span>
+                     <span>
+                        <img src="./INS16717652A.avif" alt="saree-image">
+                        <p>Pure Kanchipuram Silk Saree</p>
+                        <p><span>&#8377; 9799</span> &#8377;9099</p>
+                     </span>
+                </div>
+                <button value="view all">View all</button>
+            </section><br><br><br><hr>
+            <section>
+              <div class="footer">
+                <div class="sec1">
+                 <h1>About Sudharshan Silks</h1>
+                 <p>SUDARSHAN SILK SAREES BANGALORE is the finest online and offline shopping mart based in India since 1944 , which deals in exquisite line of Indian fashion clothing. We are the wholesellers and retailers of ethnic array of Indian clothing for almost 70 Years.</p>
+                 </div>
+                 <div class="sec2">
+                   <h2>Information</h2>
+                   <p>Search</p>
+                   <p>Contact Information</p>
+                   <p>Privacy policy</p>
+                   <p>Return policy</p>
+                   <p> Shipping policy</p>
+                   <p>Terms of Service</p>
+                 </div>
+                 <div class="sec3">
+                    <h2>Company Info</h2>
+                    <p>Sudarshan Family Store</p>
+                    <p>#231 , Chickpet Main Road, oppo. Canera Bank, Bangalore - 560053</p>
+                    <p>Phone : +91 82718 34727</p>
+                    <p>Whatsapp : +91 76310 30604</p>
+                    <p>Email : info@sudarshansaree.com</p>
+                 </div>
+              </div>
+              <div class="foot1">
+                 <div class="div-input">
+                    <label for="email">Subscribe to our Emails</label><br>
+                    <input type="email" name="email" id="email" placeholder="Email                               &rightarrow;"></div>
+                    <div class="div-image">
+                        <img src="./download (4).png" alt="facebook-icon">
+                        <img src="./download (5).png" alt="twitter-logo">
+                        <img src="./download (6).png" alt="linkedin-logo">
+                        <img src="./images (1).png" alt="youtube-logo">
+                    </div>
+                 </div>
+                 <div class="foot">
+                    <small class="foot2">
+                        &copy; 2025 Sudarshan Sarees powered by shopify
+                        <p>Refund policy</p>
+                        <p>privacy policy</p>
+                        <p>Terms of service</p>
+                        <p>Shipping policy</p>
+                        <p>Contact Information</p>
+                    </small>
+                 </div>
+            </section>
+        </div>
+    </body>
+</html>
